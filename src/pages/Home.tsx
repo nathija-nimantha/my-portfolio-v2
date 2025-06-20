@@ -1,0 +1,135 @@
+import { ArrowRight, Download, Github, Linkedin } from "lucide-react"
+import { Link } from "react-router-dom"
+import useTypewriter from "../components/useTypewriter"
+import { useEffect } from "react"
+
+const Home = () => {
+  const roles = ["Full Stack Developer", "UI/UX Designer"]
+  const typedText = useTypewriter(roles, 100, 2000)
+
+  useEffect(() => {
+    document.title = "Home | Nathija Nimantha"
+  }, [])
+
+  return (
+    <div className="min-h-screen pt-16">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                Nathija Nimantha
+              </span>
+            </h1>
+            <p
+              className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto border-r-2 border-white typing-caret inline-block">
+              {typedText}
+            </p>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto animate-slide-up opacity-0 animate-delay-700 animate-fill-forwards">
+              I build full-stack solutions that are fast, scalable, and designed with the user in mind.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in animate-delay-1000">
+            <Link
+              to="/projects"
+              className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 transform hover:scale-105 animate-glow"
+            >
+              <span>View My Work</span>
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a
+              href="/Nathija-Nimantha-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-8 py-4 backdrop-blur-md bg-white/10 text-white rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20"
+            >
+              <Download size={20} />
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <div className="flex justify-center space-x-6 pt-8 animate-fade-in animate-delay-1200">
+            <a
+              href="https://github.com/nathija-nimantha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full backdrop-blur-md bg-white/10 text-white hover:bg-white/20 hover:text-primary-400 transition-all duration-300 transform hover:scale-110"
+            >
+              <Github size={24} />
+            </a>
+            <a
+              href="https://linkedin.com/in/nathija-nimantha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full backdrop-blur-md bg-white/10 text-white hover:bg-white/20 hover:text-primary-400 transition-all duration-300 transform hover:scale-110"
+            >
+              <Linkedin size={24} />
+            </a>
+          </div>
+        </div>
+
+        {/* Floating Background Circles */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary-500/20 rounded-full blur-xl animate-float"></div>
+        <div
+          className="absolute bottom-1/4 right-10 w-32 h-32 bg-secondary-500/20 rounded-full blur-xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary-400/30 rounded-full blur-lg animate-float"
+          style={{ animationDelay: "4s" }}
+        ></div>
+      </section>
+
+      {/* Quick About Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="backdrop-blur-md bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6 animate-slide-in">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  I'm Nathija Nimantha, a passionate full-stack developer from Sri Lanka. I specialize in building modern web
+                  and mobile applications using technologies like React, Node.js, Flutter, and Spring Boot. My focus is on
+                  writing clean, scalable code with great user experiences.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Currently, I'm working as a Trainee Software Engineer Intern at Syigen (Pvt) Ltd, where I'm gaining
+                  real-world experience in building production-ready software. I also completed the Certified Developer
+                  Program at iCET Panadura in 2024, which sharpened my skills in full-stack development and project-based
+                  learning.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 backdrop-blur-md bg-white/5 rounded-xl">
+                    <div className="text-2xl font-bold text-primary-400">30+</div>
+                    <div className="text-gray-300">Projects</div>
+                  </div>
+                  <div className="text-center p-4 backdrop-blur-md bg-white/5 rounded-xl">
+                    <div className="text-2xl font-bold text-secondary-400">2+</div>
+                    <div className="text-gray-300">Years of Experience</div>
+                  </div>
+                </div>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+              <div className="relative animate-slide-up">
+                <div className="w-full h-80 backdrop-blur-md bg-gradient-to-br from-primary-500/20 to-secondary-500/20 rounded-2xl flex items-center justify-center border border-white/10">
+                  <div className="text-6xl">👨‍💻</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default Home
