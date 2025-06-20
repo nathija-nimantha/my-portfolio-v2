@@ -1,6 +1,13 @@
+import { Link } from "react-router-dom"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 
 const Footer = () => {
+  const hiddenPages = [
+    { path: "/blogs", label: "Blogs" },
+    { path: "/certifications", label: "Certifications" },
+    { path: "/tech-stack", label: "Tech Stack" },
+  ]
+
   const socialLinks = [
     { icon: Github, href: "https://github.com/nathija-nimantha/", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/nathija-nimantha/", label: "LinkedIn" },
@@ -18,6 +25,18 @@ const Footer = () => {
             <p className="text-gray-300 max-w-md">
               Passionate developer creating amazing digital experiences with modern technologies.
             </p>
+          </div>
+
+          {/* Hidden Pages */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-white">Explore More</h4>
+            <div className="space-y-2">
+              {hiddenPages.map(({ path, label }) => (
+                <Link key={path} to={path} className="block text-gray-300 hover:text-primary-400 transition-colors">
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Social Links */}
