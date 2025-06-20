@@ -1,0 +1,90 @@
+import { Cloud, Code, Database, Palette, Wrench } from "lucide-react";
+
+export const categories = [
+    {
+        id: "frontend",
+        title: "Frontend",
+        icon: Code,
+        color: "from-blue-500 to-cyan-500",
+        technologies: [
+            { name: "HTML", level: 95, description: "Markup language for creating web pages" },
+            { name: "CSS", level: 95, description: "Style sheet language used for describing presentation" },
+            { name: "JavaScript", level: 94, description: "Dynamic programming language for web development" },
+            { name: "TypeScript", level: 90, description: "Typed superset of JavaScript" },
+            { name: "React", level: 95, description: "Component-based JavaScript UI library" },
+            { name: "Next.js", level: 88, description: "React framework for server-side rendering and static sites" },
+            { name: "Tailwind CSS", level: 92, description: "Utility-first CSS framework" },
+            { name: "Flutter (UI)", level: 85, description: "UI toolkit for building natively compiled apps" },
+        ],
+    },
+    {
+        id: "backend",
+        title: "Backend",
+        icon: Database,
+        color: "from-green-500 to-emerald-500",
+        technologies: [
+            { name: "Node.js", level: 90, description: "JavaScript runtime for backend development" },
+            { name: "Express.js", level: 88, description: "Minimalist web framework for Node.js" },
+            { name: "Python", level: 85, description: "Versatile high-level programming language" },
+            { name: "Java", level: 85, description: "Object-oriented programming language" },
+            { name: "Spring Boot", level: 80, description: "Java-based framework for microservices" },
+            { name: "FastAPI", level: 80, description: "Modern Python web framework for APIs" },
+            { name: "REST APIs", level: 92, description: "Standard web service architecture" },
+        ],
+    },
+    {
+        id: "database",
+        title: "Database",
+        icon: Database,
+        color: "from-purple-500 to-pink-500",
+        technologies: [
+            { name: "Supabase", level: 88, description: "Open-source Firebase alternative" },
+            { name: "PostgreSQL", level: 85, description: "Advanced open-source relational database" },
+            { name: "MySQL", level: 82, description: "Widely used relational database" },
+            { name: "Firebase", level: 80, description: "Google-backed Backend-as-a-Service" },
+            { name: "MongoDB", level: 75, description: "NoSQL document-oriented database" },
+        ],
+    },
+    {
+        id: "cloud-devops",
+        title: "Cloud & DevOps",
+        icon: Cloud,
+        color: "from-orange-500 to-red-500",
+        technologies: [
+            { name: "Vercel", level: 90, description: "Frontend deployment and hosting platform" },
+            { name: "Railway", level: 85, description: "Cloud infrastructure for developers" },
+            { name: "GitHub Actions", level: 82, description: "CI/CD automation via GitHub" },
+            { name: "Docker", level: 80, description: "Containerization platform" },
+            { name: "Render", level: 75, description: "Cloud platform for apps and websites" },
+        ],
+    },
+    {
+        id: "design-uiux",
+        title: "Design & UI/UX",
+        icon: Palette,
+        color: "from-pink-500 to-rose-500",
+        technologies: [
+            { name: "Figma", level: 88, description: "Design and prototyping tool" },
+            { name: "Canva", level: 82, description: "Graphic design platform for non-designers" },
+            { name: "Adobe XD", level: 50, description: "UI/UX design and wireframing tool" },
+        ],
+    },
+    {
+        id: "tools-others",
+        title: "Tools & Others",
+        icon: Wrench,
+        color: "from-indigo-500 to-purple-500",
+        technologies: [
+            { name: "Git", level: 92, description: "Version control system" },
+            { name: "GitHub", level: 95, description: "Code hosting & collaboration" },
+            { name: "VS Code", level: 97, description: "Code editor with rich extensions" },
+            { name: "Postman", level: 90, description: "API testing & collaboration" },
+            { name: "Notion", level: 88, description: "Productivity and project management" },
+            { name: "Jira", level: 78, description: "Agile project tracking" },
+            { name: "Vite", level: 88, description: "Next-gen frontend tooling" },
+            { name: "Jest", level: 82, description: "Unit testing framework for JS" },
+            { name: "Supabase Studio", level: 78, description: "Open-source Firebase alternative dashboard" },
+            { name: "Netlify", level: 82, description: "Static site deployment and CI/CD" }
+        ],
+    },
+];
