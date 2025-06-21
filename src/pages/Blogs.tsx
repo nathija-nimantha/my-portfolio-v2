@@ -61,7 +61,10 @@ const Blogs = () => {
     }
 
     fetchBlogs()
-  }, [])
+  }, [
+    API_KEY,
+    BLOG_ID,
+  ])
 
   const featuredBlogs = blogs.filter((blog) => blog.featured)
   const otherBlogs = blogs.filter((blog) => !blog.featured)
