@@ -29,8 +29,8 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState<BlogPost[]>([])
 
   // Access the API key and blog ID from environment variables
-  const API_KEY = import.meta.env.VITE_BLOGGER_API_KEY
-  const BLOG_ID = import.meta.env.VITE_BLOGGER_BLOG_ID
+  const API_KEY = import.meta.env.VITE_API_KEY
+  const BLOG_ID = import.meta.env.VITE_BLOG_ID
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -61,7 +61,10 @@ const Blogs = () => {
     }
 
     fetchBlogs()
-  }, [])
+  }, [
+    API_KEY,
+    BLOG_ID,
+  ])
 
   const featuredBlogs = blogs.filter((blog) => blog.featured)
   const otherBlogs = blogs.filter((blog) => !blog.featured)

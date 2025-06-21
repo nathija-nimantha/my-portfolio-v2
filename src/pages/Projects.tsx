@@ -82,7 +82,7 @@ const Projects = () => {
                   <div className={`relative ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                     <div className="relative overflow-hidden rounded-2xl border border-white/10">
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image?.trim() ? project.image : "https://imgur.com/mAzfmYo.jpg"}
                         alt={project.title}
                         className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500"
                       />
@@ -109,7 +109,7 @@ const Projects = () => {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image?.trim() ? project.image : "https://imgur.com/mAzfmYo.jpg"}
                     alt={project.title}
                     className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
                   />
