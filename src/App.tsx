@@ -5,7 +5,7 @@ import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 import Blogs from "./pages/Blogs"
-import Certifications from "./pages/Certifications"
+// import Certifications from "./pages/Certifications"
 import TechStack from "./pages/TechStack"
 import SingleBlog from "./pages/SingleBlog"
 import "./App.css"
@@ -39,7 +39,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<SingleBlog />} />
-            <Route path="/certifications" element={<Certifications />} />
+            {/* <Route path="/certifications" element={<Certifications />} /> */}
             <Route path="/tech-stack" element={<TechStack />} />
           </Routes>
         </Layout>
