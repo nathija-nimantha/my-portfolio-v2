@@ -37,7 +37,7 @@ const Home = () => {
 
           <div className="flex justify-center space-x-6 pt-8">
             <a
-              href="https://github.com/nathija-nimantha"
+              href="https://github.com/nathija-nimantha/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full backdrop-blur-md bg-white/10 text-white hover:bg-white/20 hover:text-primary-400 transition-all duration-300 transform hover:scale-110"
