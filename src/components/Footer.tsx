@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 const Footer = () => {
   const hiddenPages = [
     { path: "/blogs", label: "Blogs" },
-    { path: "/certifications", label: "Certifications" },
+    // { path: "/certifications", label: "Certifications" },
     { path: "/tech-stack", label: "Tech Stack" },
   ]
 

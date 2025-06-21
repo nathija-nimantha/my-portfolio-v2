@@ -28,8 +28,9 @@ interface RawBlogPost {
 const Blogs = () => {
   const [blogs, setBlogs] = useState<BlogPost[]>([])
 
-  const BLOG_ID = "3933283970512362604"
-  const API_KEY = "AIzaSyAPLmpeQwIOgOq0nwNbBrqW91-xsvPlaDc"
+  // Access the API key and blog ID from environment variables
+  const API_KEY = import.meta.env.VITE_BLOGGER_API_KEY
+  const BLOG_ID = import.meta.env.VITE_BLOGGER_BLOG_ID
 
   useEffect(() => {
     const fetchBlogs = async () => {
