@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - chore/update-gitub-actions
 
 jobs:
   build-and-deploy:
