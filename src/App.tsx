@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./components/Layout"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -10,6 +10,7 @@ import TechStack from "./pages/TechStack"
 import SingleBlog from "./pages/SingleBlog"
 import "./App.css"
 import { useEffect } from "react"
+import NotFound from "./pages/NotFound"
 
 function App() {
   useEffect(() => {
@@ -26,9 +27,9 @@ function App() {
       document.head.removeChild(favicon)
     }
   }, [])
-  
+
   return (
-    <Router>
+    <BrowserRouter basename="/my-portfolio-v2">
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="fixed inset-0 bg-dots"></div>
         <Layout>
@@ -41,10 +42,11 @@ function App() {
             <Route path="/blogs/:id" element={<SingleBlog />} />
             {/* <Route path="/certifications" element={<Certifications />} /> */}
             <Route path="/tech-stack" element={<TechStack />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 

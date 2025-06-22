@@ -18,8 +18,13 @@ jobs:
         with:
           node-version: 20
 
+      - name: Clean node modules and lockfile
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Inject environment variables
         run: |
@@ -29,8 +34,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List build output
+        run: ls -la ./dist
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
