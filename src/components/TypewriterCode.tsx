@@ -36,28 +36,25 @@ dev.say_hello()`
 
   useEffect(() => {
     if (currentIndex < codeString.length) {
-      // Calculate dynamic delay with random pauses
-      let delay = 25 // Base typing speed
+      let delay = 25
       
       const char = codeString[currentIndex]
       const prevChar = currentIndex > 0 ? codeString[currentIndex - 1] : ''
       
-      // Add natural pauses at certain points
       if (char === '\n') {
-        delay = 150 // Pause at end of lines
+        delay = 150
       } else if (char === ':') {
-        delay = 200 // Pause after colons
+        delay = 200
       } else if (char === '=' && codeString[currentIndex + 1] === ' ') {
-        delay = 100 // Pause after assignments
+        delay = 100
       } else if (char === ',' && codeString[currentIndex + 1] === ' ') {
-        delay = 80 // Pause after commas
+        delay = 80
       } else if (char === '"' && prevChar !== '\\') {
-        delay = 120 // Pause when starting/ending strings
+        delay = 120
       } else if (char === '(' || char === ')' || char === '{' || char === '}') {
-        delay = 90 // Pause at brackets
+        delay = 90
       } else if (Math.random() < 0.08) {
-        // Random thinking pauses (8% chance)
-        delay = Math.random() * 300 + 200 // 200-500ms pause
+        delay = Math.random() * 300 + 200
       }
 
       const timeout = setTimeout(() => {
@@ -71,7 +68,6 @@ dev.say_hello()`
     }
   }, [currentIndex, codeString])
 
-  // New function to render code with inline cursor
   const renderCodeWithCursor = () => {
     const beforeCursor = displayedCode
     const lines = beforeCursor.split('\n')
