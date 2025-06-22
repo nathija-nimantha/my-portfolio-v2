@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - chore/update-github-actions
+
 
 jobs:
   build-and-deploy:
@@ -18,8 +20,13 @@ jobs:
         with:
           node-version: 20
 
+      - name: Clean node modules and lockfile
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Inject environment variables
         run: |
@@ -34,3 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
