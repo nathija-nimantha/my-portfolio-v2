@@ -42,7 +42,7 @@ const Blogs = () => {
 
         const enrichedPosts: BlogPost[] = posts.map((post, index) => {
           const match = post.content.match(/<img[^>]+src="([^">]+)"/);
-          const imageUrl = match ? match[1] : "https://imgur.com/FIk7eSi.png"
+          const imageUrl = match ? match[1] : "https://i.imgur.com/FIk7eSi.png"
 
           return {
             id: post.id,
