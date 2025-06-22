@@ -40,19 +40,23 @@ const Blogs = () => {
         )
         const posts = response.data.items || []
 
-        // You can optionally mark one as "featured" manually for demo purposes
-        const enrichedPosts: BlogPost[] = posts.map((post, index) => ({
-          id: post.id,
-          url: post.url,
-          title: post.title,
-          excerpt: post.content.replace(/<[^>]+>/g, "").substring(0, 150) + "...",
-          content: post.content,
-          date: post.published,
-          readTime: `${Math.ceil(post.content.split(" ").length / 200)} min read`,
-          tags: post.labels || ["General"],
-          image: "/placeholder.svg?height=300&width=500",
-          featured: index === 0,
-        }))
+        const enrichedPosts: BlogPost[] = posts.map((post, index) => {
+          const match = post.content.match(/<img[^>]+src="([^">]+)"/);
+          const imageUrl = match ? match[1] : "https://i.imgur.com/FIk7eSi.png"
+
+          return {
+            id: post.id,
+            url: post.url,
+            title: post.title,
+            excerpt: post.content.replace(/<[^>]+>/g, "").substring(0, 150) + "...",
+            content: post.content,
+            date: post.published,
+            readTime: `${Math.ceil(post.content.split(" ").length / 200)} min read`,
+            tags: post.labels || ["General"],
+            image: imageUrl,
+            featured: index === 0,
+          }
+        })
 
         setBlogs(enrichedPosts)
       } catch (error) {
