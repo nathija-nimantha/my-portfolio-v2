@@ -1,8 +1,16 @@
 import { ArrowRight, Download, Github, ExternalLink } from "lucide-react"
 import { Link } from "react-router-dom"
 import TypewriterCode from "../components/TypewriterCode"
+import useTypewriter from "../components/useTypewriter"
 
 const Home = () => {
+  const typewriterText = useTypewriter([
+    "Full Stack Developer",
+    "UI/UX Designer",
+    "Open Source Contributor",
+    "Tech Enthusiast"
+  ])
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -15,7 +23,10 @@ const Home = () => {
                 Nathija Nimantha
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">Full Stack Developer & UI/UX Designer</p>
+            <p className="font-mono text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto min-h-[2.5rem]">
+              {typewriterText}
+              <span className="caret-blink"></span>
+            </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
               I create beautiful, functional, and user-centered digital experiences that solve real-world problems.
             </p>
